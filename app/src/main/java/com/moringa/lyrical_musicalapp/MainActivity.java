@@ -15,8 +15,6 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-package com.moringa.myrestaurant;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
