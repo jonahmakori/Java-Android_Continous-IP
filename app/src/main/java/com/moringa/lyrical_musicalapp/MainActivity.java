@@ -1,6 +1,11 @@
 package com.moringa.lyrical_musicalapp;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -10,12 +15,36 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-public class MainActivity extends AppCompatActivity {
+package com.moringa.myrestaurant;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    @BindView(R.id.findMusicCategoryButton)
+    Button findMusicCategoryButton;
+    @BindView(R.id.typeOfMusicEditText)
+    EditText typeOfMusicEditText;
+    @BindView(R.id.appNameTextView)
+    TextView mAppNameTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        ButterKnife.bind(this);
+
+        mfindMusicCategoryButton.setOnclickListener(this);
         BottomNavigationView navView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
@@ -27,4 +56,20 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(navView, navController);
     }
 
+    @Override
+    public void onClick(View v) {
+        if (v == findMusicCategoryButton) {
+            String location = mTypeOfMusicEditText.getText().toString();
+            Intent intent = new Intent(MainActivity.this, RestaurantsActivity.class);
+            intent.putExtra("typeOfMusic", typeOfMusic);
+            startActivity(intent);
+        }
+    }
+
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+
+
+    }
 }
