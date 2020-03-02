@@ -15,8 +15,8 @@ android {
         testFunctionalTest = false
         testHandleProfiling = false
     }
-    testOptions{
-        unitTests{
+    testOptions {
+        unitTests {
             includeAndroidResources = true
         }
     }
