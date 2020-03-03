@@ -9,6 +9,8 @@
         android:id="@+id/navigation_home"
         android:name="com.moringa.lyrical_musicalapp.ui.home.HomeFragment"
         android:label="LYRICAL-MUSICAL APP"
+        android:background="#D30B25"
+
         tools:layout="@layout/fragment_home" />
 
     <fragment

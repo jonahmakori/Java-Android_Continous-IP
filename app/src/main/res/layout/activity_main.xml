@@ -19,23 +19,25 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/music_categories"
+        android:textColor="#F8F5F8"
+        android:background="@color/colorAccent"
         android:textSize="30sp"
-        android:textAlignment="center"
+        android:textAlignment="center" />
 
-        />
     <ListView
         android:id="@+id/listView"
         android:layout_width="match_parent"
         android:layout_height="340dp"
-        android:layout_gravity="center"
-
-        />
+        android:background="#8203A9"
+        android:textColor="@color/colorTextIcons"
+        android:layout_gravity="center" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?android:attr/windowBackground"
+        android:background="#F9F9FC"
+
         app:menu="@menu/bottom_nav_menu" />
 
 
@@ -43,6 +45,8 @@
         android:id="@+id/nav_host_fragment"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
+        android:background="#0728F5"
+
         android:layout_height="match_parent"
         app:defaultNavHost="true"
         app:navGraph="@navigation/mobile_navigation" />
