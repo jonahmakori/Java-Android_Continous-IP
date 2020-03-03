@@ -3,7 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="#F7F3F3"
     android:layout_height="match_parent">
+
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/softrock" />
+
+
 
     <Button
         android:id="@+id/signInBtn"
@@ -36,6 +50,8 @@
         android:hint="User Name"
         android:inputType="textPersonName"
         tools:layout_editor_absoluteX="44dp"
+        android:background="#FAF8FB"
+        android:textColor="#4E0101"
         tools:layout_editor_absoluteY="26dp"
         android:layout_marginBottom="53dp"
         android:layout_above="@+id/signInBtn"
@@ -49,6 +65,8 @@
         android:hint="Password"
         android:inputType="textPersonName"
         tools:layout_editor_absoluteX="44dp"
+        android:background="#FAF8FB"
+        android:textColor="#2C0333"
         tools:layout_editor_absoluteY="85dp"
         android:layout_above="@+id/signInBtn"
         android:layout_alignLeft="@+id/userNameTxt"
