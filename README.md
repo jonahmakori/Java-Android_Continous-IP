@@ -1,13 +1,13 @@
-# Hero-Squad App
+# Lyrical-Musical App
 
 ## Description
-This is an app whereby A user Creates a Hero and Assigns the hero t a Squad.
+This is an app whereby A user can acccess all lyrics for any Songs.
 
 ## prerequisites
 
-1. Uses Jdk inorder for it to be compiled.
-2. Uses Gradle inorder to built.
-3.USes heroku to be deployed on Github.
+1. Uses An Emulator inorder for it to be run.
+2. Uses Android Studio inorder to built.
+3.USes jdk to be compilled.
 
 
 
@@ -15,12 +15,12 @@ This is an app whereby A user Creates a Hero and Assigns the hero t a Squad.
 
 | Behaviour | Input | Output |
 | --------- | ------| ------ |
-|Gradle Run on server locally in port (4567)|Click on the Cerate Hero luink And Create Hero|Click on the Add to Squad And then Will be successful|
+|Have an android device or an Emulator|While if in the App ,login/register .You will be redirected to the landing page|Click on the preffered music Category And search for lyrics|
 
 
 
 ## Live Website
-View the complete site [here](https://github.com/jonahmakori/Hero-Squad)
+View the complete site [here](https://github.com/jonahmakori/Continuos_Ip-Project)
 
 ## Contributors
  - Jonah Makori
@@ -28,6 +28,7 @@ View the complete site [here](https://github.com/jonahmakori/Hero-Squad)
 
 ## Technologies Used
 - java
+- Android
 
 
 ## codebeat
