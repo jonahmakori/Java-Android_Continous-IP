@@ -10,7 +10,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class SoftRockActivity extends Activity {
-    @BindView(R.id.softrock)
+    @BindView(R.id.textView2)
     TextView mSoftRock;
     @SuppressLint("SetTextI18n")
     @Override
