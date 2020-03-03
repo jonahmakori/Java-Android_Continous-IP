@@ -1,6 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".SoftRockActivity">
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            android:id="@+id/search"
+            tools:ignore="MissingConstraints">
 
-</LinearLayout>
+        </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/softrock"
+        android:layout_width="297dp"
+        android:layout_height="32dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="56dp"
+        android:text="@string/textview"
+        android:textSize="30sp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <EditText
+        android:id="@+id/search_music"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_search_black_24dp"
+        android:hint="@string/search"
+        android:paddingRight="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="11558dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="460dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="328dp" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="128dp"
+        android:layout_height="49dp"
+        android:layout_marginBottom="460dp"
+        android:src="@drawable/soft1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="27dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

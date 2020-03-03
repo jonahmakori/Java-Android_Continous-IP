@@ -23,10 +23,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-//    @BindView(R.id.findMusicCategoryButton)
-//    Button mFindMusicCategoryButton;
-//    @BindView(R.id.musicGenresEditText)
-//    EditText mMusicGenresEditText;
+
 //    @BindView(R.id.appNameTextView)
 //    TextView mAppNameTextView;
     @BindView(R.id.listView)
@@ -54,7 +51,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 if (i == 0){
                     startHipHop();
-                }else if(i == 0){
+                }else if(i == 1){
                     startSoftRock();
                 }
                 String musicGenres = ((TextView) view).getText().toString();
@@ -74,7 +71,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void startSoftRock() {
-        Intent intent = new Intent(MainActivity.this, SoftRock.class);
+        Intent intent = new Intent(MainActivity.this, SoftRockActivity.class);
         intent.putExtra("musicGenres", musicGenres);
         startActivity(intent);
     }

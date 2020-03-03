@@ -1,8 +1,7 @@
 package com.moringa.lyrical_musicalapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
@@ -10,8 +9,9 @@ import android.widget.TextView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class SoftRock extends AppCompatActivity {
-    @BindView(R.id.softrock) TextView mSoftRock;
+public class SoftRockActivity extends Activity {
+    @BindView(R.id.softrock)
+    TextView mSoftRock;
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +22,6 @@ public class SoftRock extends AppCompatActivity {
 
         Intent intent = getIntent();
         String musicGenres = intent.getStringExtra("musicGenres");
-        mSoftRock.setText("These is HipHop Music " );
+        mSoftRock.setText(" Soft-Rock Music Available " );
     }
 }

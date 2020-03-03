@@ -11,7 +11,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class HipHopActivity extends AppCompatActivity {
-    @BindView(R.id.hiphop) TextView mHiphop;
+    @BindView(R.id.textView2) TextView mHiphop;
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
