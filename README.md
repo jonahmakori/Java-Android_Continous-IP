@@ -34,8 +34,7 @@ View the complete site [here](https://github.com/jonahmakori/Java-Android_Contin
 ## codebeat
 
 My Grade
-[![codebeat badge](https://codebeat.co/badges/2fa9a414-049d-4611-8bb0-aa9bb692c013)](https://codebeat.co/projects/github-com-jonahmakori-hero-squad-feature-dev)
-
+[![codebeat badge](https://codebeat.co/badges/c9151910-4b40-428b-8956-c82b87ae2a34)](https://codebeat.co/projects/github-com-jonahmakori-java-android_continous-ip-feature-dev)
 ## Support and contact details
 
  - Email jonahmakori0@gmail.com
