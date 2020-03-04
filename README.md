@@ -7,7 +7,7 @@ This is an app whereby A user can acccess all lyrics for any Songs.
 
 1. Uses An Emulator inorder for it to be run.
 2. Uses Android Studio inorder to built.
-3.USes jdk to be compilled.
+3.USes jdk to be compiled.
 
 
 
@@ -20,7 +20,7 @@ This is an app whereby A user can acccess all lyrics for any Songs.
 
 
 ## Live Website
-View the complete site [here](https://github.com/jonahmakori/Continuos_Ip-Project)
+View the complete site [here](https://github.com/jonahmakori/Java-Android_Continous-IP)
 
 ## Contributors
  - Jonah Makori
