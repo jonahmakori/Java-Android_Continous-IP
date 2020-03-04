@@ -42,7 +42,7 @@
         android:layout_height="91dp"
         android:layout_marginBottom="476dp"
         android:background="@color/colorAccent"
-        android:text="Artist : Lil Baby \n Song : Close Friends \n Got to  Lyrics"
+        android:text="Artist : 1986 \n Song : It Must Have Been Love \n Go to  Lyrics"
         android:textColor="@color/colorTextIcons"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -55,7 +55,7 @@
         android:layout_height="83dp"
         android:layout_marginBottom="380dp"
         android:background="@color/colorAccent"
-        android:text="  Artist : Drake \n Song : God's Plan \n Got to  Lyrics"
+        android:text="  Artist : Terry Jacks \n Song : Seasons In The Sun \n Go to  Lyrics"
         android:textColor="@color/colorTextIcons"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -69,7 +69,7 @@
         android:layout_height="86dp"
         android:layout_marginBottom="272dp"
         android:background="@color/colorAccent"
-        android:text="Artist : Beyonce ft Jay Z \n Song : Drunk In Love \n Got to  Lyrics"
+        android:text="Artist : John Lennon \n Song : Woman in Love \n Go to  Lyrics"
         android:textColor="@color/colorTextIcons"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -81,7 +81,7 @@
         android:layout_height="86dp"
         android:layout_marginBottom="164dp"
         android:background="@color/colorAccent"
-        android:text="Artist : Designer \n Song : Panda panda \n Got to  Lyrics"
+        android:text="Artist : Marc Cohn \n Song : Walking in Memphis \n Go to  Lyrics"
         android:textColor="@color/colorTextIcons"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -93,7 +93,7 @@
         android:layout_height="78dp"
         android:layout_marginBottom="52dp"
         android:background="@color/colorAccent"
-        android:text="Artist : BreedarLaw ft Benzema \n Song : Doremi \n Got to  Lyrics"
+        android:text="Artist : Petra Joy \n Song : Glory of Love \n Go to  Lyrics"
         android:textColor="@color/colorTextIcons"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -105,7 +105,7 @@
         android:layout_height="89dp"
         android:layout_marginEnd="256dp"
         android:layout_marginBottom="480dp"
-        android:src="@drawable/lil"
+        android:src="@drawable/s3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -115,7 +115,7 @@
         android:layout_height="85dp"
         android:layout_marginEnd="252dp"
         android:layout_marginBottom="380dp"
-        android:src="@drawable/lil"
+        android:src="@drawable/s4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/textView4" />
 
@@ -125,7 +125,7 @@
         android:layout_height="91dp"
         android:layout_marginEnd="260dp"
         android:layout_marginBottom="268dp"
-        android:src="@drawable/lil"
+        android:src="@drawable/s5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/textView5" />
 
@@ -135,7 +135,7 @@
         android:layout_height="90dp"
         android:layout_marginEnd="248dp"
         android:layout_marginBottom="160dp"
-        android:src="@drawable/lil"
+        android:src="@drawable/s6"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/textView6" />
 
@@ -144,7 +144,7 @@
         android:layout_width="167dp"
         android:layout_height="101dp"
         android:layout_marginEnd="248dp"
-        android:src="@drawable/lil"
+        android:src="@drawable/s7"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/textView7"
         app:layout_constraintTop_toTopOf="parent"

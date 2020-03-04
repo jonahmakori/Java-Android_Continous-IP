@@ -7,17 +7,23 @@
     android:layout_height="match_parent">
 
 
+    <!--    <ImageView-->
+<!--        android:id="@+id/imageView"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_alignParentEnd="true"-->
+<!--        android:layout_marginEnd="0dp"-->
+<!--        android:scaleType="centerCrop"-->
+<!--        android:src="@drawable/res2" />-->
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="0dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/softrock" />
-
-
+        android:layout_marginEnd="9dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/login" />
 
     <Button
         android:id="@+id/signInBtn"
@@ -26,7 +32,7 @@
         android:text="Sign In"
         tools:layout_editor_absoluteX="147dp"
         tools:layout_editor_absoluteY="203dp"
-        android:layout_marginBottom="208dp"
+        android:layout_marginBottom="100dp"
         android:layout_alignParentBottom="true"
         android:layout_alignLeft="@+id/passwordTxt"
         android:layout_alignStart="@+id/passwordTxt" />
