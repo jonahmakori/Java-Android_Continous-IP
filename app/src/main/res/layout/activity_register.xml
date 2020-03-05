@@ -48,15 +48,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Submit"
-        android:layout_centerVertical="true"
+        android:layout_marginTop="500dp"
+
         android:layout_centerHorizontal="true" />
 
     <EditText
         android:id="@+id/emailRegTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="17dp"
         android:ems="10"
+        android:textColor="#F9F5F5"
+        a
         android:textColorHighlight="#F7F1F6"
         android:hint="Email"
         android:inputType="textPersonName"
