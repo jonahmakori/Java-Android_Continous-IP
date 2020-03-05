@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context="com.moringa.lyrical_musicalapp.RegisterActivity"
     tools:layout_editor_absoluteY="81dp"
+    android:background="@color/colorAccent"
     tools:layout_editor_absoluteX="0dp">
 
 
@@ -18,7 +19,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="19dp"
+        android:layout_marginTop="300dp"
         android:ems="10"
         android:hint="User Name"
         android:inputType="textPersonName"
@@ -56,6 +57,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="17dp"
         android:ems="10"
+        android:textColorHighlight="#F7F1F6"
         android:hint="Email"
         android:inputType="textPersonName"
         android:layout_below="@+id/passwordRegTxt"
