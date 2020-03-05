@@ -22,6 +22,13 @@ public class SoftRockActivity extends Activity {
 
         Intent intent = getIntent();
         String musicGenres = intent.getStringExtra("musicGenres");
-        mSoftRock.setText(" Soft-Rock Music Available " );
+        mSoftRock.setText(" Artist : 1986 \n Song : It Must Have Been Love \n Go to  Lyrics " );
+
+
+    }
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+
+
     }
 }

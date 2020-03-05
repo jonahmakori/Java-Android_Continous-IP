@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
@@ -39,7 +40,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+
         ButterKnife.bind(this);
+
 
 //        mFindMusicCategoryButton.setOnClickListener(this);
         MusicGenresArrayAdapter adapter = new MusicGenresArrayAdapter(this, android.R.layout.simple_list_item_1, musicGenres);

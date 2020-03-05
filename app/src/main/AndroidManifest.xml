@@ -18,7 +18,9 @@
         <activity android:name=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.moringa.lyrical_musicalapp.MainActivity"></meta-data>
+                android:value="com.moringa.lyrical_musicalapp.MainActivity">
+
+            </meta-data>
         </activity>
         <activity
 

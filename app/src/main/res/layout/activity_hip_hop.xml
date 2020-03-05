@@ -9,7 +9,6 @@
     tools:context=".HipHopActivity"
     android:id="@+id/linearLayout">
 
-
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/search"
         android:layout_width="427dp"

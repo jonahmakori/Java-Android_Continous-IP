@@ -24,4 +24,9 @@ public class HipHopActivity extends AppCompatActivity {
         String musicGenres = intent.getStringExtra("musicGenres");
         mHiphop.setText("Artist : Khaligraph Jones \n Song : Instagram Girls \n Got to  Lyrics " );
     }
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+
+
+    }
 }
