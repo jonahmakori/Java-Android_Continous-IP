@@ -1,16 +1,13 @@
-package com.moringa.lyrical_musicalapp;
+package com.moringa.lyrical_musicalapp.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
@@ -19,6 +16,8 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.moringa.lyrical_musicalapp.MusicGenresArrayAdapter;
+import com.moringa.lyrical_musicalapp.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

@@ -1,30 +1,30 @@
-package com.moringa.lyrical_musicalapp;
+package com.moringa.lyrical_musicalapp.ui;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.moringa.lyrical_musicalapp.R;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class SoftRockActivity extends Activity {
-    @BindView(R.id.textView3)
-    TextView mSoftRock;
+public class HipHopActivity extends AppCompatActivity {
+    @BindView(R.id.textView2) TextView mHiphop;
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_soft_rock);
+        setContentView(R.layout.activity_hip_hop);
 
         ButterKnife.bind(this);
 
         Intent intent = getIntent();
         String musicGenres = intent.getStringExtra("musicGenres");
-        mSoftRock.setText(" Artist : 1986 \n Song : It Must Have Been Love \n Go to  Lyrics " );
-
-
+        mHiphop.setText("Artist : Khaligraph Jones \n Song : Instagram Girls \n Got to  Lyrics " );
     }
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {

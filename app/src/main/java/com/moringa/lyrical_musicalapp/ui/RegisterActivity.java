@@ -1,4 +1,4 @@
-package com.moringa.lyrical_musicalapp;
+package com.moringa.lyrical_musicalapp.ui;
 
 import android.app.Activity;
 import android.content.Context;
@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.moringa.lyrical_musicalapp.R;
 
 public class RegisterActivity extends Activity {
 

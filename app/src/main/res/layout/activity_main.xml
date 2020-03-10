@@ -9,51 +9,51 @@
 
 
     <!--    <Button-->
-<!--        android:id="@+id/signInBtn"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Sign In"-->
-<!--        tools:layout_editor_absoluteX="147dp"-->
-<!--        tools:layout_editor_absoluteY="203dp"-->
-<!--        android:layout_marginBottom="50dp"-->
-<!--        android:layout_alignParentBottom="true"-->
-<!--        android:layout_alignLeft="@+id/passwordTxt"-->
-<!--        android:layout_alignStart="@+id/passwordTxt" />-->
+    <!--        android:id="@+id/signInBtn"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="Sign In"-->
+    <!--        tools:layout_editor_absoluteX="147dp"-->
+    <!--        tools:layout_editor_absoluteY="203dp"-->
+    <!--        android:layout_marginBottom="50dp"-->
+    <!--        android:layout_alignParentBottom="true"-->
+    <!--        android:layout_alignLeft="@+id/passwordTxt"-->
+    <!--        android:layout_alignStart="@+id/passwordTxt" />-->
 
-<!--    <Button-->
-<!--        android:id="@+id/registerBtn"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Register"-->
-<!--        tools:layout_editor_absoluteX="147dp"-->
-<!--        tools:layout_editor_absoluteY="251dp"-->
-<!--        android:layout_below="@+id/passwordTxt"-->
-<!--        android:layout_alignRight="@+id/passwordTxt"-->
-<!--        android:layout_alignEnd="@+id/passwordTxt" />-->
+    <!--    <Button-->
+    <!--        android:id="@+id/registerBtn"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="Register"-->
+    <!--        tools:layout_editor_absoluteX="147dp"-->
+    <!--        tools:layout_editor_absoluteY="251dp"-->
+    <!--        android:layout_below="@+id/passwordTxt"-->
+    <!--        android:layout_alignRight="@+id/passwordTxt"-->
+    <!--        android:layout_alignEnd="@+id/passwordTxt" />-->
 
-<!--    <ImageView-->
-<!--        android:id="@+id/imageView"-->
-<!--        android:layout_width="188dp"-->
-<!--        android:layout_height="174dp"-->
-<!--        android:scaleType="centerCrop"-->
-<!--        android:src="@drawable/lyric2" />-->
+    <!--    <ImageView-->
+    <!--        android:id="@+id/imageView"-->
+    <!--        android:layout_width="188dp"-->
+    <!--        android:layout_height="174dp"-->
+    <!--        android:scaleType="centerCrop"-->
+    <!--        android:src="@drawable/lyric2" />-->
 
-<!--    <ImageView-->
-<!--        android:id="@+id/imageView2"-->
-<!--        android:layout_width="188dp"-->
-<!--        android:layout_height="174dp"-->
-<!--        android:layout_alignRight="@id/imageView"-->
-<!--        android:scaleType="centerCrop"-->
-<!--        android:src="@drawable/login4" />-->
+    <!--    <ImageView-->
+    <!--        android:id="@+id/imageView2"-->
+    <!--        android:layout_width="188dp"-->
+    <!--        android:layout_height="174dp"-->
+    <!--        android:layout_alignRight="@id/imageView"-->
+    <!--        android:scaleType="centerCrop"-->
+    <!--        android:src="@drawable/login4" />-->
 
 
     <!--        <EditText-->
-        <!--            android:id="@+id/editText"-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:ems="10"-->
-        <!--            android:inputType="textPersonName"-->
-        <!--            android:text="Name" />-->
+    <!--            android:id="@+id/editText"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:ems="10"-->
+    <!--            android:inputType="textPersonName"-->
+    <!--            android:text="Name" />-->
 
     <ImageView
         android:id="@+id/imageView8"
@@ -69,9 +69,9 @@
 
     <ImageView
         android:id="@+id/imageView9"
-        android:layout_width="221dp"
-        android:layout_height="141dp"
-        android:layout_marginStart="232dp"
+        android:layout_width="183dp"
+        android:layout_height="161dp"
+        android:layout_marginStart="240dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -95,15 +95,15 @@
 
     <ListView
         android:id="@+id/listView"
-        android:layout_width="408dp"
-        android:layout_height="377dp"
+        android:layout_width="414dp"
+        android:layout_height="391dp"
         android:layout_gravity="center"
-        android:layout_marginBottom="60dp"
+        android:layout_marginBottom="44dp"
         android:background="#8203A9"
         android:textColor="@color/colorTextIcons"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="1dp">
+        tools:layout_editor_absoluteX="0dp">
 
     </ListView>
 

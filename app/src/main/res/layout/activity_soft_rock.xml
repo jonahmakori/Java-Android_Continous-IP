@@ -7,7 +7,7 @@
 
     android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".SoftRockActivity">
+        tools:context=".ui.SoftRockActivity">
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/search"
         android:layout_width="580dp"

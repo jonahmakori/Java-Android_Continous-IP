@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.moringa.lyrical_musicalapp">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,22 +11,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RegisterActivity"></activity>
+        <activity android:name=".ui.RegisterActivity"></activity>
 
-        <activity android:name=".SoftRockActivity"></activity>
-        <activity android:name=".HipHopActivity"
+        <activity android:name=".ui.SoftRockActivity"></activity>
+        <activity android:name=".ui.HipHopActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar">
         </activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".ui.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.moringa.lyrical_musicalapp.MainActivity">
+                android:value="com.moringa.lyrical_musicalapp.ui.MainActivity">
 
             </meta-data>
         </activity>
         <activity
 
-            android:name=".LoginActivity"
+            android:name=".ui.LoginActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
