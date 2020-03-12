@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/colorPrimary"
+    android:layout_height="match_parent"
+    tools:context=".ui.SearchTrackActivity">
+
+    <TextView
+        android:id="@+id/searchTextView"
+        android:layout_marginTop="30dp"
+        android:text="@string/title_home"
+        android:textColor="@color/colorPrimaryText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:id="@+id/searchTrack"
+        android:layout_below="@+id/searchTextView"
+        android:layout_width="match_parent"
+        android:background="@color/design_default_color_primary_dark"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_track"
+        android:textColor="@color/colorPrimaryText"
+        android:gravity="center_vertical" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/searchTrack"
+        android:id="@+id/searchLyrics"
+        android:hint="@string/search_lyrics"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/colorPrimaryText"
+        android:background="@color/colorPrimary" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/submit_details"
+        android:textColor="@color/design_default_color_primary"
+        android:background="@color/colorPrimaryText"
+        android:layout_below="@+id/searchLyrics"
+        android:id="@+id/submitTrackDetails"/>
+
+</RelativeLayout>

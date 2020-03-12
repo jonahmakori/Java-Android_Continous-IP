@@ -4,27 +4,23 @@ package com.moringa.lyrical_musicalapp.models;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import org.parceler.Parcel;
-
-
-@Parcel
 public class MusicGenre {
 
-    @SerializedName("music_genre_vanity")
+    @SerializedName("music_genre_id")
     @Expose
-    private String musicGenreVanity;
-    @SerializedName("music_genre_name_extended")
-    @Expose
-    private String musicGenreNameExtended;
+    private Integer musicGenreId;
     @SerializedName("music_genre_parent_id")
     @Expose
     private Integer musicGenreParentId;
     @SerializedName("music_genre_name")
     @Expose
     private String musicGenreName;
-    @SerializedName("music_genre_id")
+    @SerializedName("music_genre_name_extended")
     @Expose
-    private Integer musicGenreId;
+    private String musicGenreNameExtended;
+    @SerializedName("music_genre_vanity")
+    @Expose
+    private String musicGenreVanity;
 
     /**
      * No args constructor for use in serialization
@@ -41,29 +37,21 @@ public class MusicGenre {
      * @param musicGenreId
      * @param musicGenreNameExtended
      */
-    public MusicGenre(String musicGenreVanity, String musicGenreNameExtended, Integer musicGenreParentId, String musicGenreName, Integer musicGenreId) {
+    public MusicGenre(Integer musicGenreId, Integer musicGenreParentId, String musicGenreName, String musicGenreNameExtended, String musicGenreVanity) {
         super();
-        this.musicGenreVanity = musicGenreVanity;
-        this.musicGenreNameExtended = musicGenreNameExtended;
+        this.musicGenreId = musicGenreId;
         this.musicGenreParentId = musicGenreParentId;
         this.musicGenreName = musicGenreName;
-        this.musicGenreId = musicGenreId;
-    }
-
-    public String getMusicGenreVanity() {
-        return musicGenreVanity;
-    }
-
-    public void setMusicGenreVanity(String musicGenreVanity) {
+        this.musicGenreNameExtended = musicGenreNameExtended;
         this.musicGenreVanity = musicGenreVanity;
     }
 
-    public String getMusicGenreNameExtended() {
-        return musicGenreNameExtended;
+    public Integer getMusicGenreId() {
+        return musicGenreId;
     }
 
-    public void setMusicGenreNameExtended(String musicGenreNameExtended) {
-        this.musicGenreNameExtended = musicGenreNameExtended;
+    public void setMusicGenreId(Integer musicGenreId) {
+        this.musicGenreId = musicGenreId;
     }
 
     public Integer getMusicGenreParentId() {
@@ -82,12 +70,20 @@ public class MusicGenre {
         this.musicGenreName = musicGenreName;
     }
 
-    public Integer getMusicGenreId() {
-        return musicGenreId;
+    public String getMusicGenreNameExtended() {
+        return musicGenreNameExtended;
     }
 
-    public void setMusicGenreId(Integer musicGenreId) {
-        this.musicGenreId = musicGenreId;
+    public void setMusicGenreNameExtended(String musicGenreNameExtended) {
+        this.musicGenreNameExtended = musicGenreNameExtended;
+    }
+
+    public String getMusicGenreVanity() {
+        return musicGenreVanity;
+    }
+
+    public void setMusicGenreVanity(String musicGenreVanity) {
+        this.musicGenreVanity = musicGenreVanity;
     }
 
 }

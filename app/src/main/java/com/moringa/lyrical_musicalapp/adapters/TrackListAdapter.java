@@ -8,11 +8,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.moringa.lyrical_musicalapp.R;
-import com.moringa.lyrical_musicalapp.models.TrackList;
+import com.moringa.lyrical_musicalapp.models.Track;
 import com.moringa.lyrical_musicalapp.ui.TrackDetailActivity;
 
 import org.parceler.Parcels;
@@ -28,32 +27,36 @@ import butterknife.ButterKnife;
 //import org.parceler.Parcels;
 
 public class TrackListAdapter extends RecyclerView.Adapter<TrackListAdapter.TrackViewHolder> {
-    private List<TrackList> mTracks;
+    private List<Track> mTracks;
     private Context mContext;
 
-    public TrackListAdapter(Context context, List<TrackList> tracks) {
+    public TrackListAdapter(Context context, List<Track> tracks) {
         mContext = context;
         mTracks = tracks;
     }
 
+//    public TrackListAdapter(TrackListActivity context, List<Track> track) {
+//    }
+
     @Override
     public TrackListAdapter.TrackViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.track_list_item, parent, false);
+        View view =
+                LayoutInflater.from(parent.getContext()).inflate(R.layout.track_list_item, parent, false);
         TrackViewHolder viewHolder = new TrackViewHolder(view);
         return viewHolder;
     }
-
-    @Override
-    public void onBindViewHolder(@NonNull TrackViewHolder holder, int position) {
-
-    }
-
-    //
+//
 //    @Override
-//    public void onBindViewHolder( TrackListAdapter.TrackViewHolder holder, int position) {
-//        holder.bindTrack(mTracks.get(position));
+//    public void onBindViewHolder(@NonNull TrackViewHolder holder, int position) {
 //
 //    }
+
+
+    @Override
+    public void onBindViewHolder(TrackListAdapter.TrackViewHolder holder, int position) {
+        holder.bindTrack(mTracks.get(position));
+
+    }
     @Override
     public int getItemCount() {
         return mTracks.size();
@@ -86,12 +89,10 @@ public class TrackListAdapter extends RecyclerView.Adapter<TrackListAdapter.Trac
             mContext.startActivity(intent);
         }
 
-//        public void bindTrack(TrackList track) {
-//            mNameTextView.setText(track.getName());
-//            mCategoryTextView.setText(track.getTrack().getTitle());
-//            mRatingTextView.setText("Rating: " + track.getRating() + "/5");
-//            Picasso.get().load(track.getImageUrl()).into(mTracksImageView);
-//
-//        }
+        public void bindTrack(Track track) {
+            mNameTextView.setText((CharSequence) track.getArtistName());
+            mRatingTextView.setText("Rating: " + track.getTrackShareUrl() + "/5");
+
+        }
     }
 }

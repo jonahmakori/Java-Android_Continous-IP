@@ -83,7 +83,7 @@
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="432dp"
+        android:layout_marginBottom="460dp"
         android:background="@color/colorAccent"
         android:text="@string/music_categories"
         android:textAlignment="center"
@@ -91,12 +91,12 @@
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="@+id/nav_view"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="-4dp" />
+        tools:layout_editor_absoluteX="3dp" />
 
     <ListView
         android:id="@+id/listView"
         android:layout_width="414dp"
-        android:layout_height="391dp"
+        android:layout_height="417dp"
         android:layout_gravity="center"
         android:layout_marginBottom="44dp"
         android:background="#8203A9"

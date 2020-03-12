@@ -4,40 +4,34 @@ package com.moringa.lyrical_musicalapp.models;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import org.parceler.Parcel;
-
-import java.util.List;
-
-
-@Parcel
 public class MusixmatchTrackSearchResponse {
 
-    @SerializedName("track_list")
+    @SerializedName("message")
     @Expose
-    private List<TrackList> trackList = null;
+    private Message message;
 
     /**
      * No args constructor for use in serialization
-     *
+     * 
      */
     public MusixmatchTrackSearchResponse() {
     }
 
     /**
-     *
-     * @param trackList
+     * 
+     * @param message
      */
-    public MusixmatchTrackSearchResponse(List<TrackList> trackList) {
+    public MusixmatchTrackSearchResponse(Message message) {
         super();
-        this.trackList = trackList;
+        this.message = message;
     }
 
-    public List<TrackList> getTrackList() {
-        return trackList;
+    public Message getMessage() {
+        return message;
     }
 
-    public void setTrackList(List<TrackList> trackList) {
-        this.trackList = trackList;
+    public void setMessage(Message message) {
+        this.message = message;
     }
 
 }

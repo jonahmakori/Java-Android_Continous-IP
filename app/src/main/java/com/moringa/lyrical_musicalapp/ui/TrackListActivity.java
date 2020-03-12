@@ -2,17 +2,19 @@ package com.moringa.lyrical_musicalapp.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.moringa.lyrical_musicalapp.Constants;
 import com.moringa.lyrical_musicalapp.R;
 import com.moringa.lyrical_musicalapp.adapters.TrackListAdapter;
 import com.moringa.lyrical_musicalapp.models.MusixmatchTrackSearchResponse;
+import com.moringa.lyrical_musicalapp.models.Track;
 import com.moringa.lyrical_musicalapp.network.MusixmatchApi;
 import com.moringa.lyrical_musicalapp.network.MusixmatchClient;
 
@@ -36,43 +38,60 @@ public class TrackListActivity extends AppCompatActivity {
 
     private TrackListAdapter mAdapter;
 
-    public List<com.moringa.lyrical_musicalapp.models.TrackList> tracks;
+    public MusixmatchTrackSearchResponse musixmatchTrackSearchResponse;
+
+    private String q_track;
+    private String q_artist;
+    private List<Track> trackList;
+    private String url = "apikey=" + Constants.MUSIXMATCH_API_KEY;
+    private String trackName;
+    private Track musicTrack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search);
+        setContentView(R.layout.activity_track_list);
         ButterKnife.bind(this);
 
         Intent intent = getIntent();
-        String q_track = intent.getStringExtra("q_track");
+        q_track = intent.getStringExtra("q_track");
+        q_artist = intent.getStringExtra("q_artist");
+
+        //Client
         MusixmatchApi client = MusixmatchClient.getClient();
+        Log.e("Client", "client");
+        //Make Call Request
+        Call<MusixmatchTrackSearchResponse> call = client.getTrack(q_track, q_artist);
+        Log.e("added data",String.valueOf( q_artist));
 
-        Call<MusixmatchTrackSearchResponse> call = client.getTrack(q_track, "q_artist");
-
+        //Enqueue request.
         call.enqueue(new Callback<MusixmatchTrackSearchResponse>() {
+
             @Override
             public void onResponse(Call<MusixmatchTrackSearchResponse> call, Response<MusixmatchTrackSearchResponse> response) {
                 hideProgressBar();
                 if (response.isSuccessful()) {
+                    Log.e("Success", String.valueOf(response.body()));
 
-                    tracks = response.body().getTrackList();
-                    mAdapter = new TrackListAdapter(TrackListActivity.this, tracks);
-                    mRecyclerView.setAdapter(mAdapter);
-                    RecyclerView.LayoutManager layoutManager =
-                            new LinearLayoutManager(TrackListActivity.this);
-                    mRecyclerView.setLayoutManager(layoutManager);
-                    mRecyclerView.setHasFixedSize(true);
+//                    trackName = response.body().getMessage().getBody().getTrackList().get(1).getTrack().getTrackName();
+//                    trackList = musixmatchTrackSearchResponse.getMessage().getBody().getTrackList();
+//                    trackList = response.body().getMessage().getBody().getTrackList();
+//                    mAdapter = new TrackListAdapter(TrackListActivity.this, trackList);
+//                    RecyclerView.LayoutManager layoutManager =
+//                            new LinearLayoutManager(TrackListActivity.this);
+//                    mRecyclerView.setAdapter(mAdapter);
+//                    mRecyclerView.setLayoutManager(layoutManager);
+//                    mRecyclerView.setHasFixedSize(true);
 
                     showTracks();
-                } else {
-                    showUnsuccessfulMessage();
                 }
+//                    showUnsuccessfulMessage();
+
             }
 
             @Override
             public void onFailure(Call<MusixmatchTrackSearchResponse> call, Throwable t) {
-
+                Log.e("error", t.getMessage());
                 hideProgressBar();
                 showFailureMessage();
             }

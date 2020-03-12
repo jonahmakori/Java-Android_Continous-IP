@@ -13,7 +13,6 @@ import androidx.fragment.app.Fragment;
 
 import com.moringa.lyrical_musicalapp.R;
 import com.moringa.lyrical_musicalapp.models.Track;
-import com.squareup.picasso.Picasso;
 
 import org.parceler.Parcels;
 
@@ -42,13 +41,16 @@ public class TrackDetailFragment extends Fragment implements View.OnClickListene
         // Required empty public constructor
     }
 
-    public static TrackDetailFragment newInstance(Track tracks) {
+    public static TrackDetailFragment newInstance(Track track) {
         TrackDetailFragment trackDetailFragment = new TrackDetailFragment();
         Bundle args = new Bundle();
-        args.putParcelable("q_track", Parcels.wrap(tracks));
+        args.putParcelable("q_track", Parcels.wrap(track));
         trackDetailFragment.setArguments(args);
         return trackDetailFragment;
     }
+
+//    public static TrackDetailFragment newInstance(Track track) {
+//    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -61,7 +63,7 @@ public class TrackDetailFragment extends Fragment implements View.OnClickListene
         View view = inflater.inflate(R.layout.fragment_track_detail, container, false);
         ButterKnife.bind(this, view);
 
-        Picasso.get().load(mTracks.getLyricsId()).into(mImageLabel);
+        //Picasso.get().load(mTracks.getLyricsId()).into(mImageLabel);
 
         List<Class<Locale.Category>> categories = new ArrayList<>();
 
@@ -69,20 +71,21 @@ public class TrackDetailFragment extends Fragment implements View.OnClickListene
             categories.add(category.getDeclaringClass());
         }
 
-        mNameLabel.setText(mTracks.getLyricsId());
-        mSaveSearchTrackButton.setText(android.text.TextUtils.join(", ", categories));
-        mRatingLabel.setText(Double.toString(mTracks.getHasLyrics()) + "/5");
-        mPhoneLabel.setText(mTracks.getTrackSpotifyId());
+        //mNameLabel.setText(mTracks.);
+        //mSaveSearchTrackButton.setText(android.text.TextUtils.join(", ", categories));
+        //mRatingLabel.setText(Double.toString(mTracks.getHasLyrics()) + "/5");
+        //mPhoneLabel.setText(mTracks.getTrackSpotifyId());
 //        mAddressLabel.setText(mTracks.getHasLyrics().toString());
-        mWebsiteLabel.setOnClickListener(this);
-        mPhoneLabel.setOnClickListener(this);
-        mAddressLabel.setOnClickListener(this);
+        //mWebsiteLabel.setOnClickListener(this);
+        //mPhoneLabel.setOnClickListener(this);
+        //mAddressLabel.setOnClickListener(this);
         return view;
     }
 
     private Locale.Category[] mSaveSearchTrackButton() {
         return mSaveSearchTrackButton();
     }
+
 
     @Override
     public void onClick(View v){

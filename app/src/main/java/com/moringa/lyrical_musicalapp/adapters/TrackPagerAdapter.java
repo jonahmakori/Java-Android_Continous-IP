@@ -26,8 +26,4 @@ public class TrackPagerAdapter extends FragmentPagerAdapter {
         return mTracks.size();
     }
 
-    @Override
-    public CharSequence getPageTitle(int position) {
-        return mTracks.get(position).getArtistName();
-    }
 }

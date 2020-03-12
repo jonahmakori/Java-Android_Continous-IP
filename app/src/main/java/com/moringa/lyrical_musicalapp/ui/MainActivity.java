@@ -3,17 +3,15 @@ package com.moringa.lyrical_musicalapp.ui;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.moringa.lyrical_musicalapp.MusicGenresArrayAdapter;
@@ -23,9 +21,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-
-//    @BindView(R.id.appNameTextView)
-//    TextView mAppNameTextView;
+    @BindView(R.id.nav_view) BottomNavigationView bottomNavigationView;
     @BindView(R.id.listView)
     ListView mListView;
     public static final String TAG = TypeOfMusicActivity.class.getSimpleName();
@@ -38,15 +34,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
-
         ButterKnife.bind(this);
 
 
 //        mFindMusicCategoryButton.setOnClickListener(this);
         MusicGenresArrayAdapter adapter = new MusicGenresArrayAdapter(this, android.R.layout.simple_list_item_1, musicGenres);
-
+        bottomNavigationView.setOnNavigationItemSelectedListener(navigationItemSelectedListner);
         mListView.setAdapter(adapter);
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -62,16 +55,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Toast.makeText(MainActivity.this, musicGenres, Toast.LENGTH_LONG).show();
             }
         });
-        BottomNavigationView navView = findViewById(R.id.nav_view);
-//         Passing each menu ID as a set of Ids because each
-//         menu should be considered as top level destinations.
-        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications)
-                .build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-        NavigationUI.setupWithNavController(navView, navController);
     }
+
+    BottomNavigationView.OnNavigationItemSelectedListener navigationItemSelectedListner = new BottomNavigationView.OnNavigationItemSelectedListener() {
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+            switch (menuItem.getItemId()){
+                case R.id.navigation_dashboard:
+                    startActivity(new Intent(MainActivity.this, SearchTrackActivity.class));
+                    return true;
+                case R.id.navigation_home:
+                    startActivity(new Intent(MainActivity.this, MainActivity.class));
+            }
+            return false;
+        }
+    };
 
     private void startSoftRock() {
         Intent intent = new Intent(MainActivity.this, SoftRockActivity.class);

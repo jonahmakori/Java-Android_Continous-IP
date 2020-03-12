@@ -4,21 +4,17 @@ package com.moringa.lyrical_musicalapp.models;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import org.parceler.Parcel;
-
-
-@Parcel
 public class Header {
 
-    @SerializedName("available")
-    @Expose
-    private Integer available;
     @SerializedName("status_code")
     @Expose
     private Integer statusCode;
     @SerializedName("execute_time")
     @Expose
-    private Integer executeTime;
+    private Double executeTime;
+    @SerializedName("available")
+    @Expose
+    private Integer available;
 
     /**
      * No args constructor for use in serialization
@@ -33,18 +29,10 @@ public class Header {
      * @param statusCode
      * @param executeTime
      */
-    public Header(Integer available, Integer statusCode, Integer executeTime) {
+    public Header(Integer statusCode, Double executeTime, Integer available) {
         super();
-        this.available = available;
         this.statusCode = statusCode;
         this.executeTime = executeTime;
-    }
-
-    public Integer getAvailable() {
-        return available;
-    }
-
-    public void setAvailable(Integer available) {
         this.available = available;
     }
 
@@ -56,12 +44,20 @@ public class Header {
         this.statusCode = statusCode;
     }
 
-    public Integer getExecuteTime() {
+    public Double getExecuteTime() {
         return executeTime;
     }
 
-    public void setExecuteTime(Integer executeTime) {
+    public void setExecuteTime(Double executeTime) {
         this.executeTime = executeTime;
+    }
+
+    public Integer getAvailable() {
+        return available;
+    }
+
+    public void setAvailable(Integer available) {
+        this.available = available;
     }
 
 }
