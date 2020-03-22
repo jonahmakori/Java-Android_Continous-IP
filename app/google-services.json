@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "45096974840",
+    "firebase_url": "https://lyrical-musical-app.firebaseio.com",
+    "project_id": "lyrical-musical-app",
+    "storage_bucket": "lyrical-musical-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:45096974840:android:2153cc18f0d17823c93e0d",
+        "android_client_info": {
+          "package_name": "com.moringa.lyrical_musicalapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "45096974840-t4v3ddhnrashd01bftt5aa48cf6seff6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDSmtvyJ8qHgXLTsueW7YAXIRr0LsOJ05c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "45096974840-t4v3ddhnrashd01bftt5aa48cf6seff6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
