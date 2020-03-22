@@ -1,20 +1,23 @@
 package com.moringa.lyrical_musicalapp.ui;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.moringa.lyrical_musicalapp.Constants;
 import com.moringa.lyrical_musicalapp.R;
 import com.moringa.lyrical_musicalapp.adapters.TrackListAdapter;
 import com.moringa.lyrical_musicalapp.models.MusixmatchTrackSearchResponse;
-import com.moringa.lyrical_musicalapp.models.Track;
+import com.moringa.lyrical_musicalapp.models.TrackList;
 import com.moringa.lyrical_musicalapp.network.MusixmatchApi;
 import com.moringa.lyrical_musicalapp.network.MusixmatchClient;
 
@@ -29,6 +32,11 @@ import retrofit2.Response;
 
 public class TrackListActivity extends AppCompatActivity {
     private static final String TAG = TrackListActivity.class.getSimpleName();
+    private SharedPreferences mSharedPreferences;
+    private String mRecentTrack;
+    private String mRecentArtist;
+
+
 
     @BindView(R.id.recyclerView)
     RecyclerView mRecyclerView;
@@ -38,14 +46,14 @@ public class TrackListActivity extends AppCompatActivity {
 
     private TrackListAdapter mAdapter;
 
-    public MusixmatchTrackSearchResponse musixmatchTrackSearchResponse;
-
     private String q_track;
     private String q_artist;
-    private List<Track> trackList;
+
+    private List<TrackList> trackList;
     private String url = "apikey=" + Constants.MUSIXMATCH_API_KEY;
-    private String trackName;
-    private Track musicTrack;
+    private MusixmatchTrackSearchResponse musixmatchTrackSearchResponse;
+//    private String trackName;
+//    private Track musicTrack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,15 +62,15 @@ public class TrackListActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         Intent intent = getIntent();
-        q_track = intent.getStringExtra("q_track");
-        q_artist = intent.getStringExtra("q_artist");
+         q_track = intent.getStringExtra("q_track");
+         q_artist = intent.getStringExtra("q_artist");
 
         //Client
         MusixmatchApi client = MusixmatchClient.getClient();
         Log.e("Client", "client");
         //Make Call Request
-        Call<MusixmatchTrackSearchResponse> call = client.getTrack(q_track, q_artist);
-        Log.e("added data",String.valueOf( q_artist));
+        Call<MusixmatchTrackSearchResponse> call = client.getTracks(q_track, q_artist);
+//        Log.e("added data",String.valueOf( q_artist));
 
         //Enqueue request.
         call.enqueue(new Callback<MusixmatchTrackSearchResponse>() {
@@ -73,17 +81,20 @@ public class TrackListActivity extends AppCompatActivity {
                 if (response.isSuccessful()) {
                     Log.e("Success", String.valueOf(response.body()));
 
-//                    trackName = response.body().getMessage().getBody().getTrackList().get(1).getTrack().getTrackName();
-//                    trackList = musixmatchTrackSearchResponse.getMessage().getBody().getTrackList();
-//                    trackList = response.body().getMessage().getBody().getTrackList();
-//                    mAdapter = new TrackListAdapter(TrackListActivity.this, trackList);
-//                    RecyclerView.LayoutManager layoutManager =
-//                            new LinearLayoutManager(TrackListActivity.this);
-//                    mRecyclerView.setAdapter(mAdapter);
-//                    mRecyclerView.setLayoutManager(layoutManager);
-//                    mRecyclerView.setHasFixedSize(true);
+//                    //trackName = response.body().getMessage().getBody().getTrackList().get(1).getTrack().getTrackName();
+                    //trackList = musixmatchTrackSearchResponse.getMessage().getBody().getTrackList();
+                    trackList = response.body().getMessage().getBody().getTrackList();
+                    //lyrics = musixmatchTrackSearchResponse2.getMessage().getBody().getLyrics();
+
+                    mAdapter = new TrackListAdapter(TrackListActivity.this, trackList);
+                    RecyclerView.LayoutManager layoutManager =
+                            new LinearLayoutManager(TrackListActivity.this);
+                    mRecyclerView.setAdapter(mAdapter);
+                    mRecyclerView.setLayoutManager(layoutManager);
+                    mRecyclerView.setHasFixedSize(true);
 
                     showTracks();
+//                    showLyrics();
                 }
 //                    showUnsuccessfulMessage();
 
@@ -97,7 +108,25 @@ public class TrackListActivity extends AppCompatActivity {
             }
 
         });
+
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        mRecentTrack = mSharedPreferences.getString(Constants.PREFERENCES_TRACK_KEY, null);
+        mRecentArtist = mSharedPreferences.getString(Constants.PREFERENCES_ARTISTNAME_KEY, null);
+
+        if(mRecentArtist != null && mRecentTrack != null){
+            client.getTracks(mRecentTrack,mRecentArtist);
+        }
+
+//        Log.d("Shared Pref Track", mRecentTrack);
+//        Log.d("Shared Pref Artist", mRecentArtist);
+
     }
+
+    private void showLyrics() {
+        mRecyclerView.setVisibility(View.VISIBLE);
+
+    }
+
     private void showFailureMessage() {
         mErrorTextView.setText("Something went wrong. Please check your Internet connection and try again later");
         mErrorTextView.setVisibility(View.VISIBLE);
