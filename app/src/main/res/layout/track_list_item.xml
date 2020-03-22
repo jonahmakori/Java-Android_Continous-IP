@@ -42,7 +42,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/albumName"
-            android:text="One Cuisine Type"
+            android:text="Artist Name"
             android:textColor="@color/colorAccent"
             android:textStyle="italic" />
 
@@ -52,7 +52,7 @@
             android:id="@+id/trackShareUrl"
             android:textSize="20dp"
             android:textStyle="bold"
-            android:text="Track name"
+            android:text="Lyrics Url"
             android:textColor="@color/colorPrimary"/>
 
         <RelativeLayout
