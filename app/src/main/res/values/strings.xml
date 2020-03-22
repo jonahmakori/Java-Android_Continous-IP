@@ -11,5 +11,8 @@
     <string name="enter_track">Enter track</string>
     <string name="search_lyrics">Search Lyrics</string>
     <string name="submit_details">Submit Details</string>
+    <string name="something_went_wrong">something went wrong</string>
+    <string name="enter_artist">Enter Artist</string>
+    <string name="see_more_details">See more Details</string>
 
 </resources>
