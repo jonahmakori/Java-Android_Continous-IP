@@ -8,7 +8,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.moringa.lyrical_musicalapp.R;
 import com.moringa.lyrical_musicalapp.adapters.TrackPagerAdapter;
-import com.moringa.lyrical_musicalapp.models.Track;
+import com.moringa.lyrical_musicalapp.models.TrackList;
 
 import org.parceler.Parcels;
 
@@ -21,7 +21,7 @@ public class TrackDetailActivity extends AppCompatActivity {
     @BindView(R.id.viewPager)
     ViewPager mViewPager;
     private TrackPagerAdapter adapterViewPager;
-    List<Track> mTracks;
+    List<TrackList> mTracks;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +29,7 @@ public class TrackDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_track_detail);
         ButterKnife.bind(this);
 
-        mTracks = Parcels.unwrap(getIntent().getParcelableExtra("q_artist"));
+        mTracks = Parcels.unwrap(getIntent().getParcelableExtra("tracks"));
         int startingPosition = getIntent().getIntExtra("position", 0);
 
         adapterViewPager = new com.moringa.lyrical_musicalapp.adapters.TrackPagerAdapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT, mTracks);
