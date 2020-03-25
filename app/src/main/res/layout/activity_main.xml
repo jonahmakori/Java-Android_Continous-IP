@@ -40,8 +40,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/searchArtistEditText"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="48dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="96dp"
+        android:layout_marginEnd="152dp"
         android:background="@color/colorPrimaryText"
         android:text="@string/submit_details"
         android:textColor="@color/design_default_color_primary" />
@@ -62,7 +63,7 @@
     <ListView
         android:id="@+id/listView"
         android:layout_width="414dp"
-        android:layout_height="290dp"
+        android:layout_height="200dp"
         android:layout_below="@+id/textView"
         android:layout_gravity="center"
         android:layout_marginTop="0dp"
@@ -77,7 +78,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/listView"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="110dp"
         android:background="#F9F9FC"
         app:menu="@menu/bottom_nav_menu" />
 
@@ -90,5 +91,17 @@
         android:layout_below="@+id/nav_view"
         app:defaultNavHost="true"
         app:navGraph="@navigation/mobile_navigation" />
+
+    <Button
+        android:id="@+id/viewSavedTracksButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/listView"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="-377dp"
+        android:layout_marginEnd="136dp"
+        android:background="@color/colorPrimaryText"
+        android:text="@string/view_saved_Tracks"
+        android:textColor="@color/design_default_color_primary" />
 
 </RelativeLayout>
