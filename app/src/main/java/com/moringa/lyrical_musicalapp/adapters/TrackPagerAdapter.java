@@ -3,15 +3,15 @@ package com.moringa.lyrical_musicalapp.adapters;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-import com.moringa.lyrical_musicalapp.models.Track;
+import com.moringa.lyrical_musicalapp.models.TrackList;
 import com.moringa.lyrical_musicalapp.ui.TrackDetailFragment;
 
 import java.util.List;
 
 public class TrackPagerAdapter extends FragmentPagerAdapter {
-    private List<Track> mTracks;
+    private List<TrackList> mTracks;
 
-    public TrackPagerAdapter(FragmentManager fm, int behavior, List<Track> tracks) {
+    public TrackPagerAdapter(FragmentManager fm, int behavior, List<TrackList> tracks) {
         super(fm, behavior);
         mTracks = tracks;
     }
@@ -25,5 +25,6 @@ public class TrackPagerAdapter extends FragmentPagerAdapter {
     public int getCount() {
         return mTracks.size();
     }
+
 
 }
