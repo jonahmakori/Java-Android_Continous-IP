@@ -27,7 +27,7 @@ public class FireBaseTrackAdapter extends RecyclerView.ViewHolder implements Vie
     Context mContext;
     View mView;
     private TextView mArtistTextView;
-    //private TextView mTrackNameTextView;
+    private TextView mTrackNameTextView;
     private TextView mAlbumTextView;
     private TextView mRatingTextView;
 
@@ -43,12 +43,12 @@ public class FireBaseTrackAdapter extends RecyclerView.ViewHolder implements Vie
     @SuppressLint("SetTextI18n")
     public void bindTrack(TrackList track){
         mArtistTextView = mView.findViewById(R.id.artistName);
-       // mTrackNameTextView = mView.findViewById(R.id.trackNameTextView);
+        mTrackNameTextView = mView.findViewById(R.id.trackNameTextView);
         mAlbumTextView = mView.findViewById(R.id.albumName);
         mRatingTextView = mView.findViewById(R.id.trackRating);
 
         mArtistTextView.setText(track.getTrack().getArtistName());
-//        mTrackNameTextView.setText(track.getTrack().getTrackName());
+        mTrackNameTextView.setText(track.getTrack().getTrackName());
         mAlbumTextView.setText(track.getTrack().getAlbumName());
         mRatingTextView.setText(Double.toString(track.getTrack().getTrackRating()));
 
