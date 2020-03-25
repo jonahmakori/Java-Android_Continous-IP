@@ -14,5 +14,7 @@
     <string name="something_went_wrong">something went wrong</string>
     <string name="enter_artist">Enter Artist</string>
     <string name="see_more_details">See more Details</string>
+    <string name="view_saved_Tracks">View Saved Tracks</string>
+    <string name="password">Password</string>
 
 </resources>
