@@ -1,11 +1,22 @@
 
 package com.moringa.lyrical_musicalapp.models;
 
-import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import org.parceler.Parcel;
+import org.parceler.ParcelPropertyConverter;
+
+import java.util.List;
+
+
+
+
+
+@Parcel
 public class Track {
+    @ParcelPropertyConverter(ItemListParcelConverter.class)
+    public List<Track> itemList;
 
     @SerializedName("track_id")
     @Expose
@@ -13,12 +24,12 @@ public class Track {
     @SerializedName("track_name")
     @Expose
     private String trackName;
-    @SerializedName("track_name_translation_list")
-    @Expose
-    private List<Object> trackNameTranslationList = null;
+//    @SerializedName("track_name_translation_list")
+//    @Expose
+//    private List<Object> trackNameTranslationList = null;
     @SerializedName("track_rating")
     @Expose
-    private Integer trackRating;
+    private Double trackRating;
     @SerializedName("commontrack_id")
     @Expose
     private Integer commontrackId;
@@ -98,11 +109,11 @@ public class Track {
      * @param hasSubtitles
      * @param commontrackId
      */
-    public Track(Integer trackId, String trackName, List<Object> trackNameTranslationList, Integer trackRating, Integer commontrackId, Integer instrumental, Integer explicit, Integer hasLyrics, Integer hasSubtitles, Integer hasRichsync, Integer numFavourite, Integer albumId, String albumName, Integer artistId, String artistName, String trackShareUrl, String trackEditUrl, Integer restricted, String updatedTime, PrimaryGenres primaryGenres) {
+    public Track(Integer trackId, String trackName, List<Object> trackNameTranslationList, Double trackRating, Integer commontrackId, Integer instrumental, Integer explicit, Integer hasLyrics, Integer hasSubtitles, Integer hasRichsync, Integer numFavourite, Integer albumId, String albumName, Integer artistId, String artistName, String trackShareUrl, String trackEditUrl, Integer restricted, String updatedTime, PrimaryGenres primaryGenres) {
         super();
         this.trackId = trackId;
         this.trackName = trackName;
-        this.trackNameTranslationList = trackNameTranslationList;
+        //this.trackNameTranslationList = trackNameTranslationList;
         this.trackRating = trackRating;
         this.commontrackId = commontrackId;
         this.instrumental = instrumental;
@@ -138,19 +149,19 @@ public class Track {
         this.trackName = trackName;
     }
 
-    public List<Object> getTrackNameTranslationList() {
-        return trackNameTranslationList;
-    }
+//    public List<Object> getTrackNameTranslationList() {
+//        return trackNameTranslationList;
+//    }
+//
+//    public void setTrackNameTranslationList(List<Object> trackNameTranslationList) {
+//        this.trackNameTranslationList = trackNameTranslationList;
+//    }
 
-    public void setTrackNameTranslationList(List<Object> trackNameTranslationList) {
-        this.trackNameTranslationList = trackNameTranslationList;
-    }
-
-    public Integer getTrackRating() {
+    public Double getTrackRating() {
         return trackRating;
     }
 
-    public void setTrackRating(Integer trackRating) {
+    public void setTrackRating(Double trackRating) {
         this.trackRating = trackRating;
     }
 
