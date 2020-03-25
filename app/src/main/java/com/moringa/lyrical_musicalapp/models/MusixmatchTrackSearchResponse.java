@@ -4,11 +4,16 @@ package com.moringa.lyrical_musicalapp.models;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import org.parceler.Parcel;
+
+
+@Parcel
 public class MusixmatchTrackSearchResponse {
 
     @SerializedName("message")
     @Expose
     private Message message;
+
 
     /**
      * No args constructor for use in serialization
@@ -29,6 +34,7 @@ public class MusixmatchTrackSearchResponse {
     public Message getMessage() {
         return message;
     }
+
 
     public void setMessage(Message message) {
         this.message = message;
