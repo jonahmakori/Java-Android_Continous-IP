@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <item name="nav_view" type="id" />
-    <item name="nav_host_fragment" type="id" />
-    <item name="saveSearcTrackButton" type="id" />
-    <item name="recyclerView" type="id" />
+<!--    <item name="nav_view" type="id" />-->
+<!--    <item name="nav_host_fragment" type="id" />-->
+<!--    <item name="saveSearcTrackButton" type="id" />-->
+<!--    <item name="recyclerView" type="id" />-->
 </resources>
