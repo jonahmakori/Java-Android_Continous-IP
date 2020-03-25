@@ -18,6 +18,8 @@ import com.moringa.lyrical_musicalapp.R;
 import com.moringa.lyrical_musicalapp.adapters.TrackListAdapter;
 import com.moringa.lyrical_musicalapp.models.MusixmatchTrackSearchResponse;
 import com.moringa.lyrical_musicalapp.models.TrackList;
+import com.moringa.lyrical_musicalapp.models2.Lyrics;
+import com.moringa.lyrical_musicalapp.models2.MusixmatchTrackSearchResponse2;
 import com.moringa.lyrical_musicalapp.network.MusixmatchApi;
 import com.moringa.lyrical_musicalapp.network.MusixmatchClient;
 
@@ -48,12 +50,12 @@ public class TrackListActivity extends AppCompatActivity {
 
     private String q_track;
     private String q_artist;
-
+    private Lyrics mLyrics;
     private List<TrackList> trackList;
     private String url = "apikey=" + Constants.MUSIXMATCH_API_KEY;
     private MusixmatchTrackSearchResponse musixmatchTrackSearchResponse;
-//    private String trackName;
-//    private Track musicTrack;
+    private MusixmatchTrackSearchResponse2 musixmatchTrackSearchResponse2;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,7 +83,7 @@ public class TrackListActivity extends AppCompatActivity {
                 if (response.isSuccessful()) {
                     Log.e("Success", String.valueOf(response.body()));
 
-//                    //trackName = response.body().getMessage().getBody().getTrackList().get(1).getTrack().getTrackName();
+                    //trackName = response.body().getMessage().getBody().getTrackList().get(1).getTrack().getTrackName();
                     //trackList = musixmatchTrackSearchResponse.getMessage().getBody().getTrackList();
                     trackList = response.body().getMessage().getBody().getTrackList();
                     //lyrics = musixmatchTrackSearchResponse2.getMessage().getBody().getLyrics();
@@ -94,9 +96,8 @@ public class TrackListActivity extends AppCompatActivity {
                     mRecyclerView.setHasFixedSize(true);
 
                     showTracks();
-//                    showLyrics();
                 }
-//                    showUnsuccessfulMessage();
+                    showUnsuccessfulMessage();
 
             }
 
@@ -108,6 +109,43 @@ public class TrackListActivity extends AppCompatActivity {
             }
 
         });
+
+//        Call<MusixmatchTrackSearchResponse2> call2 = client.getLyrics(q_track, q_artist);
+//
+//        call2.enqueue(new Callback<MusixmatchTrackSearchResponse2>() {
+//
+//            @Override
+//            public void onResponse(Call<MusixmatchTrackSearchResponse2> call2, Response<MusixmatchTrackSearchResponse2> response) {
+//                hideProgressBar();
+//                if (response.isSuccessful()) {
+//                    Log.e("Success", String.valueOf(response.body()));
+//
+////                    //trackName = response.body().getMessage().getBody().getTrackList().get(1).getTrack().getTrackName();
+//                    //trackList = musixmatchTrackSearchResponse.getMessage().getBody().getTrackList();
+//                    mLyrics = response.body().getMessage().getBody().getLyrics();
+//                    //lyrics = musixmatchTrackSearchResponse2.getMessage().getBody().getLyrics();
+//
+//                    mAdapter = new TrackListAdapter(TrackListActivity.this, mLyrics);
+//                    RecyclerView.LayoutManager layoutManager =
+//                            new LinearLayoutManager(TrackListActivity.this);
+//                    mRecyclerView.setAdapter(mAdapter);
+//                    mRecyclerView.setLayoutManager(layoutManager);
+//                    mRecyclerView.setHasFixedSize(true);
+//
+//                    showLyrics();
+//                }
+//                    showUnsuccessfulMessage();
+//
+//            }
+//
+//            @Override
+//            public void onFailure(Call<MusixmatchTrackSearchResponse2> call, Throwable t) {
+//                Log.e("error", t.getMessage());
+//                hideProgressBar();
+//                showFailureMessage();
+//            }
+//
+//        });
 
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         mRecentTrack = mSharedPreferences.getString(Constants.PREFERENCES_TRACK_KEY, null);
