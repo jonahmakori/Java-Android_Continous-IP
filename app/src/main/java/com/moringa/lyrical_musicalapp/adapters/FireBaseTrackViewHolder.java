@@ -23,10 +23,10 @@ import org.parceler.Parcels;
 
 import java.util.ArrayList;
 
-public class FireBaseTrackAdapter extends RecyclerView.ViewHolder implements View.OnClickListener {
+public class FireBaseTrackAdapter extends RecyclerView.ViewHolder implements View.OnClickListener{
     Context mContext;
     View mView;
-    private TextView mArtistTextView;
+    public TextView mArtistTextView;
     private TextView mTrackNameTextView;
     private TextView mAlbumTextView;
     private TextView mRatingTextView;
@@ -40,10 +40,11 @@ public class FireBaseTrackAdapter extends RecyclerView.ViewHolder implements Vie
 
     }
 
+
     @SuppressLint("SetTextI18n")
     public void bindTrack(TrackList track){
         mArtistTextView = mView.findViewById(R.id.artistName);
-        mTrackNameTextView = mView.findViewById(R.id.trackNameTextView);
+        mTrackNameTextView = mView.findViewById(R.id.trackName);
         mAlbumTextView = mView.findViewById(R.id.albumName);
         mRatingTextView = mView.findViewById(R.id.trackRating);
 
