@@ -1,51 +1,78 @@
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/container"
+    android:id="@+id/rel_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/searchTextView"
-            android:layout_marginTop="30dp"
-            android:text="Music heals The World"
-            android:textColor="@color/colorPrimaryText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+    <ImageView
+        android:id="@+id/ImageView"
+        android:layout_width="match_parent"
+        android:layout_height="276dp"
+        android:layout_marginTop="-5dp"
 
-        <EditText
-            android:id="@+id/searchTrack"
-            android:layout_below="@+id/searchTextView"
-            android:layout_width="match_parent"
-            android:background="@color/design_default_color_primary_dark"
-            android:layout_height="wrap_content"
-            android:hint="@string/enter_track"
-            android:textColor="@color/colorPrimaryText"
-            android:gravity="center_vertical" />
+        android:src="@drawable/image1" />
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/searchTrack"
-            android:id="@+id/searchArtistEditText"
-            android:hint="@string/enter_artist"
-            android:layout_marginTop="10dp"
-            android:textColor="@color/colorPrimaryText"
-            android:background="@color/colorPrimary" />
+    <TextView
+        android:id="@+id/ImageViewText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/ImageView"
+        android:layout_alignTop="@id/ImageView"
+        android:layout_alignRight="@id/ImageView"
+        android:layout_marginLeft="-2dp"
+        android:layout_marginTop="33dp"
+        android:layout_marginRight="2dp"
+        android:gravity="center"
+        android:textColor="@color/colorAccent"
+        android:text="MUSIC HEALS THE WORLD,MUSIC IS THE LIFE OF PEOLPLE \n Therefore Lyrics Dictate Your Life" />
+
+    <EditText
+        android:id="@+id/searchTrack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ImageViewText"
+        android:layout_alignLeft="@id/ImageView"
+        android:layout_alignTop="@id/ImageView"
+        android:layout_alignRight="@id/ImageView"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="84dp"
+        android:layout_marginRight="-1dp"
+        android:hint="@string/enter_track"
+        android:textColorHint="#030303"
+        android:textColor="@color/colorAccent"
+        android:gravity="center"/>
+
+    <EditText
+        android:id="@+id/searchArtistEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/searchTrack"
+        android:layout_alignLeft="@id/ImageView"
+        android:layout_alignTop="@id/ImageView"
+        android:layout_alignRight="@id/ImageView"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="131dp"
+        android:layout_marginRight="-1dp"
+        android:gravity="center"
+        android:hint="@string/enter_artist"
+        android:textColorHint="#032DF8"
+        android:textColor="@color/colorAccent" />
+
 
     <Button
         android:id="@+id/submitTrackDetails"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/searchArtistEditText"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="96dp"
-        android:layout_marginEnd="152dp"
-        android:background="@color/colorPrimaryText"
-        android:text="@string/submit_details"
-        android:textColor="@color/design_default_color_primary" />
+        android:layout_alignLeft="@id/ImageView"
+        android:layout_alignTop="@id/ImageView"
+        android:layout_alignRight="@id/ImageView"
+        android:layout_marginLeft="67dp"
+        android:layout_marginRight="67dp"
+        android:layout_marginTop="170dp"
+        android:backgroundTint="@color/colorAccent"
+        android:gravity="center_horizontal"
+        android:text="@string/search"
+        android:textColor="#F7F9F9"/>
 
     <TextView
         android:id="@+id/textView"
@@ -62,14 +89,14 @@
 
     <ListView
         android:id="@+id/listView"
-        android:layout_width="414dp"
-        android:layout_height="200dp"
+        android:layout_width="match_parent"
+        android:layout_height="276dp"
         android:layout_below="@+id/textView"
         android:layout_gravity="center"
         android:layout_marginTop="0dp"
         android:layout_marginBottom="0dp"
-        android:background="#8203A9"
-        android:textColor="@color/colorTextIcons">
+        android:background="#F5F5F8"
+        android:textColor="@color/colorPrimary">
 
     </ListView>
 
@@ -78,7 +105,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/listView"
-        android:layout_marginTop="110dp"
+        android:layout_marginTop="40dp"
         android:background="#F9F9FC"
         app:menu="@menu/bottom_nav_menu" />
 
@@ -94,14 +121,18 @@
 
     <Button
         android:id="@+id/viewSavedTracksButton"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/listView"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="-377dp"
-        android:layout_marginEnd="136dp"
-        android:background="@color/colorPrimaryText"
+        android:layout_alignLeft="@id/ImageView"
+        android:layout_alignTop="@id/ImageView"
+        android:layout_alignRight="@id/ImageView"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="557dp"
+        android:layout_marginRight="-2dp"
+        android:backgroundTint="@color/colorAccent"
+        android:gravity="center_horizontal"
         android:text="@string/view_saved_Tracks"
-        android:textColor="@color/design_default_color_primary" />
+        android:textColor="@color/colorTextIcons" />
+
 
 </RelativeLayout>

@@ -42,8 +42,6 @@ public class MusixmatchClient {
                     .addConverterFactory(GsonConverterFactory.create())
                     .client(okHttpClient.build())
                     .build();
-
-
         }
         return retrofit.create(MusixmatchApi.class);
     }

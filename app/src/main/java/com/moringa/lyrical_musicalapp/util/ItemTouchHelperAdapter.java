@@ -1,4 +1,4 @@
-package com.moringa.lyrical_musicalapp.adapters;
+package com.moringa.lyrical_musicalapp.util;
 
 
     public interface ItemTouchHelperAdapter {

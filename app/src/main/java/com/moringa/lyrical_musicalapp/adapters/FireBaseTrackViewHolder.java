@@ -23,16 +23,16 @@ import org.parceler.Parcels;
 
 import java.util.ArrayList;
 
-public class FireBaseTrackAdapter extends RecyclerView.ViewHolder implements View.OnClickListener{
-    Context mContext;
+public class FireBaseTrackViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
     View mView;
+    Context mContext;
     public TextView mArtistTextView;
     private TextView mTrackNameTextView;
     private TextView mAlbumTextView;
     private TextView mRatingTextView;
 
 
-    public FireBaseTrackAdapter(@NonNull View itemView) {
+    public FireBaseTrackViewHolder(@NonNull View itemView) {
         super(itemView);
         mContext = itemView.getContext();
         mView = itemView;
@@ -62,6 +62,8 @@ public class FireBaseTrackAdapter extends RecyclerView.ViewHolder implements Vie
     public void onClick(View view) {
 
         final ArrayList<TrackList> tracks = new ArrayList<>();
+//        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+//        String uid = user.getUid();
         DatabaseReference trackRef = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_TRACKS);
         trackRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -80,8 +82,6 @@ public class FireBaseTrackAdapter extends RecyclerView.ViewHolder implements Vie
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
-
             }
         });
 

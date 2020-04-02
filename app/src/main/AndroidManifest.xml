@@ -11,24 +11,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".ui.TrackListActivity"
-            android:label="@string/app_name">
+        <activity android:name=".ui.LyricsActivity"></activity>
+        <activity android:name=".ui.TrackListActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.MainActivity" />
         </activity>
         <activity android:name=".ui.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ui.MainActivity" />
         </activity>
-        <activity android:name=".ui.TrackDetailActivity"/>
-        <activity android:name=".ui.SavedTracksActivity"/>
-        <activity android:name=".ui.RegisterActivity"/>
+        <activity android:name=".ui.TrackDetailActivity" />
+        <activity android:name=".ui.SavedTracksActivity" />
+        <activity android:name=".ui.RegisterActivity" />
         <activity android:name=".ui.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW"/>
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

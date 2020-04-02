@@ -2,7 +2,6 @@ package com.moringa.lyrical_musicalapp.ui;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -82,8 +81,19 @@ public class TrackDetailFragment extends Fragment implements View.OnClickListene
     @Override
     public void onClick(View v){
         if (v == mLyricsTextView){
-            Intent webIntent = new Intent (Intent.ACTION_VIEW, Uri.parse(mTracks.getTrack().getTrackShareUrl()));
-            startActivity(webIntent);
+
+                    Toast.makeText(this.getContext(), "Going to Lyrics", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(this.getContext(), LyricsActivity.class);
+                    String track = mTracks.getTrack().getTrackName();
+                    String artist = mTracks.getTrack().getArtistName();
+                    String lyricsUrl = mTracks.getTrack().getTrackShareUrl();
+                    intent.putExtra("lyricsUrl", lyricsUrl);
+                    intent.putExtra("track", track);
+                    intent.putExtra("artist", artist);
+                    startActivity(intent);
+
+//            Intent webIntent = new Intent (Intent.ACTION_VIEW, Uri.parse(mTracks.getTrack().getTrackShareUrl()));
+//            startActivity(webIntent);
         }
         if(v == mSaveTrackButton){
             DatabaseReference trackRef = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_TRACKS);

@@ -3,6 +3,7 @@ package com.moringa.lyrical_musicalapp.network;
 
 import com.moringa.lyrical_musicalapp.Constants;
 import com.moringa.lyrical_musicalapp.models.MusixmatchTrackSearchResponse;
+import com.moringa.lyrical_musicalapp.models2.MusixmatchTrackSearchResponse2;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -15,10 +16,10 @@ public interface MusixmatchApi {
             @Query("q_artist") String q_artist
     );
 
-//        @GET("/ws/1.1/matcher.lyrics.get&" + "apikey=" + Constants.MUSIXMATCH_API_KEY)
-//    Call<MusixmatchTrackSearchResponse2> getLyrics(
-//            @Query("q_track") String q_track,
-//            @Query("q_artist") String q_artist
-//    );
+    @GET("/ws/1.1/matcher.lyrics.get&" + "apikey=" + Constants.MUSIXMATCH_API_KEY)
+    Call<MusixmatchTrackSearchResponse2> getLyrics(
+            @Query("q_track") String q_track,
+            @Query("q_artist") String q_artist
+    );
 
 }

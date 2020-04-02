@@ -1,88 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:orientation="horizontal"
-    android:layout_height="wrap_content">
-
-
-
-<!--    <ImageView-->
-<!--        android:layout_width="130dp"-->
-<!--        android:layout_height="100dp"-->
-<!--        android:id="@+id/restaurantImageView"-->
-<!--        android:src="@drawable/drake"-->
-<!--        android:scaleType="centerCrop"/>-->
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:background="#ffffff"
-        android:layout_height="match_parent"
-        android:padding="10dp">
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#010101"
+    android:orientation="vertical">
 
         <TextView
-            android:id="@+id/textView2"
-            android:layout_width="251dp"
-            android:layout_height="55dp"
+            android:id="@+id/trackName"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="10dp"
-            android:textStyle="bold" />
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/albumName"
-            android:textSize="20dp"
+            android:layout_marginBottom="5dp"
+            android:gravity="center_horizontal"
+            android:text="Track Name"
+            android:background="@color/primary_dark"
+            android:textAlignment="center"
+            android:textColor="@color/colorTextIcons"
+            android:textSize="22sp"
             android:textStyle="bold"
-            android:text="Track name" />
+            tools:ignore="RtlCompat" />
 
         <TextView
             android:id="@+id/artistName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="411dp"
+            android:layout_height="52dp"
             android:layout_below="@+id/albumName"
+            android:fontFamily="cursive"
             android:text="Artist Name"
-            android:textColor="@color/colorAccent"
-            android:textStyle="italic" />
+            android:textAlignment="center"
+            android:textColor="@color/colorTextIcons"
+            android:textSize="18sp"
+            android:padding="2dp"
+            android:textStyle="bold"
+            android:typeface="normal" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/trackShareUrl"
+            android:id="@+id/albumName"
+            android:layout_width="398dp"
+            android:layout_height="40dp"
+            android:text="Album Name"
+            android:textColor="@color/accent"
             android:textSize="20dp"
-            android:textStyle="bold"
-            android:text="Lyrics Url"
-            android:textColor="@color/colorPrimary"/>
+            android:textStyle="bold" />
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="50dp">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Rating"
                 android:id="@+id/trackRating"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:textColor="@color/colorAccent"/>
-            <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/seeMoreDetails"
-                android:text="see more"/>
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="5dp"
+                android:padding="2dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="72dp"
+                android:text="Rating"
+                android:textSize="24sp"
+                android:textColor="@color/colorTextIcons"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/viewLyrics"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="72dp"
+                android:background="#FAFCF9"
+                android:padding="3dp"
+                android:layout_marginRight="72dp"
+                android:text="View Track Details"
+                android:textSize="22sp"
+                android:textColor="@color/primary_text"
+                android:textStyle="bold" />
+
+
+
+
         </RelativeLayout>
 
-        <TextView
-            android:id="@+id/lyricsBodyTextView"
+        <View
+            android:id="@+id/divider"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:height="50dp"
-            android:layout_marginTop="20dp"
-            android:text="Lyrics Body" />
-
-
-    </LinearLayout>
-
-</RelativeLayout>
+            android:layout_height="2dp"
+            android:background="?android:attr/listDivider"
+            android:backgroundTint="@color/colorTextIcons"
+            android:backgroundTintMode="add" />
+</LinearLayout>

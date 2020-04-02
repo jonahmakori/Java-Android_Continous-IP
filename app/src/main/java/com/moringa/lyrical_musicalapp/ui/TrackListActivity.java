@@ -32,7 +32,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public class TrackListActivity extends AppCompatActivity {
+public class TrackListActivity extends AppCompatActivity{
     private static final String TAG = TrackListActivity.class.getSimpleName();
     private SharedPreferences mSharedPreferences;
     private String mRecentTrack;
@@ -42,6 +42,7 @@ public class TrackListActivity extends AppCompatActivity {
 
     @BindView(R.id.recyclerView)
     RecyclerView mRecyclerView;
+
 
     @BindView(R.id.errorTextView) TextView mErrorTextView;
     @BindView(R.id.progressBar) ProgressBar mProgressBar;
@@ -58,7 +59,7 @@ public class TrackListActivity extends AppCompatActivity {
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_track_list);
         ButterKnife.bind(this);
@@ -97,7 +98,7 @@ public class TrackListActivity extends AppCompatActivity {
 
                     showTracks();
                 }
-                    showUnsuccessfulMessage();
+//                    showUnsuccessfulMessage();
 
             }
 
@@ -109,44 +110,6 @@ public class TrackListActivity extends AppCompatActivity {
             }
 
         });
-
-//        Call<MusixmatchTrackSearchResponse2> call2 = client.getLyrics(q_track, q_artist);
-//
-//        call2.enqueue(new Callback<MusixmatchTrackSearchResponse2>() {
-//
-//            @Override
-//            public void onResponse(Call<MusixmatchTrackSearchResponse2> call2, Response<MusixmatchTrackSearchResponse2> response) {
-//                hideProgressBar();
-//                if (response.isSuccessful()) {
-//                    Log.e("Success", String.valueOf(response.body()));
-//
-////                    //trackName = response.body().getMessage().getBody().getTrackList().get(1).getTrack().getTrackName();
-//                    //trackList = musixmatchTrackSearchResponse.getMessage().getBody().getTrackList();
-//                    mLyrics = response.body().getMessage().getBody().getLyrics();
-//                    //lyrics = musixmatchTrackSearchResponse2.getMessage().getBody().getLyrics();
-//
-//                    mAdapter = new TrackListAdapter(TrackListActivity.this, mLyrics);
-//                    RecyclerView.LayoutManager layoutManager =
-//                            new LinearLayoutManager(TrackListActivity.this);
-//                    mRecyclerView.setAdapter(mAdapter);
-//                    mRecyclerView.setLayoutManager(layoutManager);
-//                    mRecyclerView.setHasFixedSize(true);
-//
-//                    showLyrics();
-//                }
-//                    showUnsuccessfulMessage();
-//
-//            }
-//
-//            @Override
-//            public void onFailure(Call<MusixmatchTrackSearchResponse2> call, Throwable t) {
-//                Log.e("error", t.getMessage());
-//                hideProgressBar();
-//                showFailureMessage();
-//            }
-//
-//        });
-
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         mRecentTrack = mSharedPreferences.getString(Constants.PREFERENCES_TRACK_KEY, null);
         mRecentArtist = mSharedPreferences.getString(Constants.PREFERENCES_ARTISTNAME_KEY, null);
@@ -183,4 +146,6 @@ public class TrackListActivity extends AppCompatActivity {
     private void hideProgressBar() {
         mProgressBar.setVisibility(View.GONE);
     }
+
+
 }
