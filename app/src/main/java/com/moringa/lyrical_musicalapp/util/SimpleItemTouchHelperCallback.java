@@ -1,16 +1,25 @@
-package com.moringa.lyrical_musicalapp.adapters;
+package com.moringa.lyrical_musicalapp.util;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.moringa.lyrical_musicalapp.util.ItemTouchHelperAdapter;
 
 public class SimpleItemTouchHelperCallback extends ItemTouchHelper.Callback {
     private final ItemTouchHelperAdapter mAdapter;
 
     public SimpleItemTouchHelperCallback(ItemTouchHelperAdapter mAdapter) {
         this.mAdapter = mAdapter;
+    }
+
+
+    @Override
+    public boolean isLongPressDragEnabled() {
+        return true;
+    }
+
+    @Override
+    public boolean isItemViewSwipeEnabled() {
+        return true;
     }
 
     @Override
